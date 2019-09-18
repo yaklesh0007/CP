@@ -65,7 +65,7 @@ Register users
                                       document.getElementById('delete-form').submit();
                               }
                               ">Delete</a>
-                              <form id="delete-form" action="/role-delete{{ $data->id}}" 
+                              <form id="delete-form" action="/role-delete/{{ $data->id}}" 
                                         method="POST" style="display: none;">
                                                 <input type="hidden" name="_method" value="delete">
                                                 @csrf

@@ -12,7 +12,7 @@ edit post
             </div>
             <div class="card-body">
                 <div class="col-md-6">
-                    <form action="/update-post/{{$posts->id}}" method="post">
+                    <form action="/update-post/{{$posts->id}}" method="post" enctype="multipart/form-data">
                     <input name="_method" type="hidden" value="PUT">
                     @csrf
                     <div class="form-group">
@@ -32,11 +32,11 @@ edit post
 
                     <div class="form-group">
                         <label for="image">Select Image </label>
-                        <input type="file" class="form-control"  
+                        <input type="file" class="form-control" id="image" 
                         aria-describedby="imageHelp" placeholder="Enter title" name="image">
                         
                     </div>
-
+                    
                     
                     <button type="submit" class="btn btn-success">Edit post</button>
                     <a href="/post" class="btn btn-danger">Cancel</a>

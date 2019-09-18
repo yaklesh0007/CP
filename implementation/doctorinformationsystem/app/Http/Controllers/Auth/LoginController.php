@@ -33,6 +33,7 @@ class LoginController extends Controller
         if(Auth::user()->role_id=='1'){
             return '/dashboard';
         }
+        
         else
         {
             return '/home';

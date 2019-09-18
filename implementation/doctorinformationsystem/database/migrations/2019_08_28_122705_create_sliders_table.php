@@ -16,8 +16,9 @@ class CreateSlidersTable extends Migration
         Schema::create('sliders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->longText('quates');
-            $table->string('whose');
+            $table->longText('quates')->nullable();
+            $table->string('whose')->nullable();
+            $table->string('image')->nullable();
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

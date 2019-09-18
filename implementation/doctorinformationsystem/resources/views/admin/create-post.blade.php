@@ -12,7 +12,7 @@ Create new post
             </div>
             <div class="card-body">
                 <div class="col-md-6">
-                    <form action="/post-store" method="post">
+                    <form action="/post-store" method="post" enctype="multipart/form-data">
                     <input name="_method" type="hidden" value="PUT">
                     @csrf
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">

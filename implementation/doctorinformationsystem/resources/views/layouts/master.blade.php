@@ -63,7 +63,7 @@
           <li class="{{ 'role-register'==request()->path()? 'active':''}}">
             <a href="/role-register">
               <i class="now-ui-icons users_single-02"></i>
-              <p>User Profile</p>
+              <p>Users </p>
             </a>
           </li>
           <li class="{{ 'post'==request()->path()? 'active':''}}">
@@ -72,18 +72,18 @@
               <p>Post List</p>
             </a>
           </li>
-          <li class="{{ 'post'==request()->path()? 'active':''}}">
-              <a href="/post">
+          <li class="{{ 'slider'==request()->path()? 'active':''}}">
+              <a href="/slider">
                 <i class="now-ui-icons design_bullet-list-67"></i>
                 <p>Slider List</p>
               </a>
           </li>
-          <li class="{{ 'post'==request()->path()? 'active':''}}">
-              <a href="/post">
-                <i class="now-ui-icons design_bullet-list-67"></i>
-                <p>feedback List</p>
-              </a>
-          </li>
+          <li class="{{ 'feedback'==request()->path()? 'active':''}}">
+            <a href="/feedback">
+              <i class="now-ui-icons design_bullet-list-67"></i>
+              <p>Feedback List</p>
+            </a>
+        </li>
           
         </ul>
       </div>
@@ -100,7 +100,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Table List</a>
+            <a class="navbar-brand" href="#pablo">Admin Dashboard</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -151,19 +151,7 @@
                                 </div>
                             </li>
 
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="now-ui-icons location_world"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Some Actions</span>
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li> -->
+              
               <li class="nav-item">
                 <a class="nav-link" href="#pablo">
                   <i class="now-ui-icons users_single-02"></i>

@@ -9,6 +9,11 @@ Posts
             <div class="card">
               <div class="card-header">
                 <h4 class="card-title">Posts list table </h4>
+                @if(session('status'))
+                <div class="alert alert-success">
+                {{session('status')}}
+                </div>
+            @endif
               </div>
               <div class="card-body">
                 <a href="/create-post" class="btn btn-success">Add new post</a>
@@ -47,8 +52,23 @@ Posts
                         margin-right:50px;">
                         </td>
                         <td>
-                          <a href="#">Edit</a>
-                          <a href="#">Delete</a>
+                          {{$data->user_id}}
+                        </td>
+                        <td class="text-right">
+                        <a href="/edit-post/{{$data->id}}" class="btn btn-success">Edit</a>
+                          
+                        <a class="btn btn-danger mt-1" href="#" onclick="
+                             var result = confirm('Are you sure you wish to delete this user roles?');
+                              if( result ){
+                                      event.preventDefault();
+                                      document.getElementById('delete-form').submit();
+                              }
+                              ">Delete</a>
+                              <form id="delete-form" action="/delete-post/{{ $data->id}}" 
+                                        method="POST" style="display: none;">
+                                                <input type="hidden" name="_method" value="delete">
+                                                @csrf
+                              </form>
                         </td>
                         
                       </tr>

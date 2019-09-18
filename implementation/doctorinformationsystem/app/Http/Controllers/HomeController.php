@@ -13,7 +13,20 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('welcome');
+    }
+
+    public function welcome()
+    {
+        $doctors = \App\User::whereHas('role', function($role) {
+            $role->where('name', 'doctor');
+        })->distinct()->get();
+
+        $slider = \App\Slider::latest()->limit(5)->get();
+
+        $posts = \App\Post::latest()->limit(4)->get();
+
+        return view('welcome', compact('doctors', 'slider', 'posts'));
     }
 
     /**
@@ -25,4 +38,6 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    
 }
