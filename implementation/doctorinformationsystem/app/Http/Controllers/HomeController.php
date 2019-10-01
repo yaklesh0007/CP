@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Message;
+use DB;
 
 class HomeController extends Controller
 {
@@ -25,8 +27,15 @@ class HomeController extends Controller
         $slider = \App\Slider::latest()->limit(5)->get();
 
         $posts = \App\Post::latest()->limit(4)->get();
-
-        return view('welcome', compact('doctors', 'slider', 'posts'));
+        
+        $messages=DB::table('messages')
+			->join('users','user_id','=','users.id')
+			->select('messages.*','users.name','users.email','users.image')
+            ->latest()
+            ->limit(2)
+			->get();
+        
+        return view('welcome', compact('doctors', 'slider', 'posts','messages'));
     }
 
     /**

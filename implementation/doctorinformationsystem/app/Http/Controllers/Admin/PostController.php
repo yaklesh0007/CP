@@ -23,7 +23,7 @@ class PostController extends Controller
         return Validator::make($data, [
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
-            'image'=>['file|image','max:2048'],
+            'image'=>['file|image','max:5000'],
             
         ]);
     }
@@ -49,7 +49,7 @@ class PostController extends Controller
             $filename=time().".".$ext;
             
             // $file->move(public_path('posts/'.$filename));
-           $image=Image::make($file)->resize(300,300)->save(public_path('posts/'.$filename));
+           $image=Image::make($file)->resize(600,600)->save(public_path('posts/'.$filename));
            
             $posts->image=$filename;
         }
@@ -92,7 +92,7 @@ class PostController extends Controller
             $ext=$file->getClientOriginalExtension();
             $filename=time().".".$ext;
             //$file->move(public_path('posts/'.$filename));
-            $image=Image::make($file)->resize(300,300)->save(public_path('posts/'.$filename));
+            $image=Image::make($file)->resize(600,600)->save(public_path('posts/'.$filename));
             $posts->image=$filename;
         }
         $posts->update();

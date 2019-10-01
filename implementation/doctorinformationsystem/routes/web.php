@@ -58,18 +58,64 @@ Route::group(['middleware'=>['auth','admin']],function()
     Route::post('/slider-store','Admin\SliderController@store');
     // admin feedback route
     Route::get('/feedback','Admin\FeedbackController@index');
+
+    Route::delete('/delete-feedback/{id}','Admin\FeedbackController@destroy');
 });
 
+//doctors activity routes
+Route::get('/doctorposts','PostsController@doctorposts');
 
+Route::get('/create-doctorposts','PostsController@create');
+
+Route::get('/edit-doctorposts/{id}','PostsController@edit');
+
+Route::put('/update-doctorposts/{id}','PostsController@update');
+
+Route::delete('/delete-doctorposts/{id}','PostsController@destroy');
+
+Route::put('/post-doctorstore','PostsController@store');
+
+Route::delete('/delete-doctorappointment/{$id}','AppointmentController@doctorappointmentdestroy');
+
+Route::get('/doctorappointment','AppointmentController@doctorappointmentindex');
+
+
+//users activity routes
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::put('/store-rating','RatesController@store');
 
-Route::resource('roles','RolesController');
+Route::get('/contact',function()
+{
+    return view('contact');
+});
+
+Route::put('/update-userprofile/{id}','UserController@updateuser');
+
+Route::put('/store-feedback','FeedbackController@store');
+
 Route::resource('roles','RolesController');
 
 Route::get('/profile','UserController@profile')->name('profile');
 Route::post('/update-profile','UserController@profileupdate');
 
+Route::put('/store-appointment','AppointmentController@store');
+
+Route::get('/welcompagepost','PostsController@welcomeindex');
+
+Route::get('/about',function()
+{
+    return view('about');
+});
+
+Route::get('/usersappointment','AppointmentController@index');
+
+Route::delete('/delete-appointment/{$id}','AppointmentController@destroy');
+
+Route::get('/create-message','MessageController@create');
+
+Route::get('/displaymessage','MessageController@index');
+
+Route::post('/store-message','MessageController@store');

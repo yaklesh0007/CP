@@ -65,4 +65,14 @@ class User extends Authenticatable
         return $this->hasMany('App\Rate');
     }
     
+    
+    public function avgRating()
+    {
+        return $this->rates->avg('rating');
+    }
+
+    public function messages()
+    {
+        return $this->hasMany('App\Message');
+    }
 }

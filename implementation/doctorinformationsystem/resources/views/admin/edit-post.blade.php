@@ -8,7 +8,7 @@ edit post
     <div class="row">
         <div class="card">
             <div class="card-header">
-                <h1>Edit users</h1>
+                <h1>Edit post</h1>
             </div>
             <div class="card-body">
                 <div class="col-md-6">

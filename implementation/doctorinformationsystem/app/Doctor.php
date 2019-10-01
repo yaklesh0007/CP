@@ -12,4 +12,11 @@ class Doctor extends User
     public function ratings(){
         return $this->hasMany('App\Rate');
     }
+
+
+       
+    public function avgRating()
+    {
+        return $this->ratings->avg('rating');
+    }
 }

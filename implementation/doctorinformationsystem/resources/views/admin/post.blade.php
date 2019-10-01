@@ -58,7 +58,7 @@ Posts
                         <a href="/edit-post/{{$data->id}}" class="btn btn-success">Edit</a>
                           
                         <a class="btn btn-danger mt-1" href="#" onclick="
-                             var result = confirm('Are you sure you wish to delete this user roles?');
+                             var result = confirm('Are you sure you wish to delete this post?');
                               if( result ){
                                       event.preventDefault();
                                       document.getElementById('delete-form').submit();

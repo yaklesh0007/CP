@@ -19,7 +19,7 @@ Create new post
                     <div class="form-group">
                         <label for="title">Title </label>
                         <input type="text" class="form-control" 
-                        aria-describedby="titleHelp" placeholder="Enter title" name="title">
+                        aria-describedby="titleHelp" placeholder="Enter title" name="title" required>
                         
                     </div>
 
@@ -27,14 +27,14 @@ Create new post
                         <label for="description">Description </label>
                         <input type="textarea" class="form-control"  
                         aria-describedby="descriptionHelp" placeholder="Enter Description"
-                         name="description" row=3>
+                         name="description" rows="3" required>
                         
                     </div>
 
                     <div class="form-group">
                         <label for="image">Select Image </label>
                         <input type="file" class="form-control"  
-                        aria-describedby="imageHelp" placeholder="Choose file" name="image">
+                        aria-describedby="imageHelp" placeholder="Choose file" name="image" required>
                         
                     </div>
 

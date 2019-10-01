@@ -19,7 +19,9 @@ Dashboard
                         <h4 class="card-title">Edit Profile</h4>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="" enctype="multipart/form-data">
+                        <form method="post" action="/update-userprofile/{{Auth::user()->id}}" enctype="multipart/form-data">
+                            @csrf
+                            {{ method_field('PUT') }}
                             <div class="row">
                                 <div class="col-md-5 pr-1">
                                     <div class="form-group">
@@ -32,14 +34,14 @@ Dashboard
                                     <div class="form-group">
                                         <label>Name</label>
                                         <input type="text" class="form-control" placeholder="name"
-                                         value="{{ Auth::user()->name }}">
+                                         value="{{ Auth::user()->name }}" name="name">
                                     </div>
                                 </div>
                                 <div class="col-md-4 pl-1">
                                     <div class="form-group">
                                         <label for="phone">Phone</label>
                                         <input type="text" class="form-control" placeholder="Phone"
-                                        value="{{ Auth::user()->phone }}">
+                                        value="{{ Auth::user()->phone }}" name="phone">
                                     </div>
                                 </div>
                             </div>
@@ -48,14 +50,14 @@ Dashboard
                                     <div class="form-group">
                                         <label>Qualification</label>
                                         <input type="text" class="form-control" placeholder="Qualification"
-                                         value="{{ Auth::user()->qualification }}">
+                                         value="{{ Auth::user()->qualification }}" name="qualification">
                                     </div>
                                 </div>
                                 <div class="col-md-6 pl-1">
                                     <div class="form-group">
                                         <label>Speacilist At</label>
                                         <input type="text" class="form-control" placeholder="specialistat"
-                                         value="{{ Auth::user()->specialistat }}">
+                                         value="{{ Auth::user()->specialistat }}" name="specialistat">
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +90,7 @@ Dashboard
                                     <div class="form-group">
                                         <label>About Me</label>
                                         <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" 
-                                        value="aboutu">{{ Auth::user()->aboutu }}</textarea>
+                                        value="aboutu" name="aboutu">{{ Auth::user()->aboutu }}</textarea>
                                     </div>
                                 </div>
                             </div>

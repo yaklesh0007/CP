@@ -18,7 +18,7 @@ class CreateRatesTable extends Migration
             $table->unsignedBigInteger('doctor_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedTinyInteger('rating');
-            $table->text('review');
+            $table->text('review')->nullable();
             $table->foreign('doctor_id')->references('id')->on('users');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

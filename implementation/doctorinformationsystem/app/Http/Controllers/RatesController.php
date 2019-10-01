@@ -13,7 +13,7 @@ class RatesController extends Controller
    {
    	 $rate=Rate::create($request->all());
 
-   	 return back();
+   	 return back()->with('status','Thank you for your rating !!!');
    }
 
 }

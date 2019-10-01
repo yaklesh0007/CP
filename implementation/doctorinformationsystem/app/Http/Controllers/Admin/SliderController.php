@@ -49,7 +49,7 @@ class SliderController extends Controller
             $filename=time().".".$ext;
             
             //$file->move(public_path('sliders/'.$filename));
-            $image=Image::make($file)->resize(300,300)->save(public_path('sliders/'.$filename));
+            $image=Image::make($file)->resize(600,600)->save(public_path('sliders/'.$filename));
             
             $sliders->image=$filename;
 
@@ -90,7 +90,7 @@ class SliderController extends Controller
             $ext=$file->getClientOriginalExtension();
             $filename=time().".".$ext;
             //$file->move(public_path('sliders/'.$filename));
-            $image=Image::make($file)->resize(300,300)->save(public_path('sliders/'.$filename));
+            $image=Image::make($file)->resize(600,600)->save(public_path('sliders/'.$filename));
             $sliders->image=$filename;
         }
         $sliders->update();

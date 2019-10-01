@@ -16,4 +16,5 @@ class Rate extends Model
     {
         return $this->belongsTo('App\User');
     }
+    
 }
